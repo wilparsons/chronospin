@@ -7,5 +7,7 @@ int main(void) {
   printf("%lu\n", entropy);
   entropy = entro_spin();
   printf("%lu\n", entropy);
+  entropy = entro_spin();
+  printf("%lu\n", entropy);
   return 0;
 }
