@@ -4,10 +4,10 @@
 int main(void) {
   uint64_t entropy = entro_spin();
 
-  printf("%lu\n", entropy);
+  printf("%llu\n", entropy);
   entropy = entro_spin();
-  printf("%lu\n", entropy);
+  printf("%llu\n", entropy);
   entropy = entro_spin();
-  printf("%lu\n", entropy);
+  printf("%llu\n", entropy);
   return 0;
 }
