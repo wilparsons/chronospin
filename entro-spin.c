@@ -1,5 +1,5 @@
-#include "entro-spin.h"
 #include <time.h>
+#include "entro-spin.h"
 
 uint64_t entro_spin(void) {
   uint64_t entropy = clock() & 1;
