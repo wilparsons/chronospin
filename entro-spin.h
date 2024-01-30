@@ -1,5 +1,5 @@
-#ifndef ENTRO_SHIFT_H
-#define ENTRO_SHIFT_H
+#ifndef ENTRO_SPIN_H
+#define ENTRO_SPIN_H
 
 #include <stdint.h>
 
