@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include "entro-spin.h"
+#include "clockspin.h"
 
 int main(void) {
-  uint64_t entropy = entro_spin();
+  uint64_t entropy = clockspin();
 
   printf("%llu\n", entropy);
-  entropy = entro_spin();
+  entropy = clockspin();
   printf("%llu\n", entropy);
-  entropy = entro_spin();
+  entropy = clockspin();
   printf("%llu\n", entropy);
   return 0;
 }
