@@ -8,6 +8,8 @@ uint64_t clockspin(void) {
   while (i != 64) {
     entropy <<= 1;
     entropy += rainshift(entropy) & 1;
+    entropy |= rainshift(entropy) & 1;
+    entropy ^= rainshift(entropy) & 1;
     entropy >>= 1;
     entropy <<= 1;
     entropy |= clock() & 1;
