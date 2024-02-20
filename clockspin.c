@@ -1,5 +1,5 @@
 #include "clockspin.h"
-#include "rainshift.h"
+#include "stormdrop.h"
 
 uint64_t clockspin(void) {
   uint64_t entropy = time((void *) 0);
@@ -7,7 +7,7 @@ uint64_t clockspin(void) {
 
   while (i != 64) {
     entropy <<= 1;
-    entropy |= (rainshift(rainshift(entropy + clock()) + clock()) + clock()) & 1;
+    entropy |= (stormdrop(stormdrop(entropy + clock()) + clock()) + clock()) & 1;
     i++;
   }
 
