@@ -2,15 +2,15 @@
 
 uint64_t chronospin(void) {
   struct timespec chronospin_time;
-  uint64_t entropy = 0;
-  unsigned char i = 0;
+  uint64_t entropy = 1;
 
-  while (i != 64) {
+  while ((entropy >> 63) != 1) {
     entropy <<= 1;
     clock_gettime(CLOCK_REALTIME, &chronospin_time);
     entropy |= chronospin_time.tv_nsec & 1;
-    i++;
   }
 
-  return entropy;
+  entropy <<= 1;
+  clock_gettime(CLOCK_REALTIME, &chronospin_time);
+  return entropy | (chronospin_time.tv_nsec & 1);
 }
