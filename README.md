@@ -1,5 +1,5 @@
 # ChronoSpin
-![ChronoSpin Logo](https://repository-images.githubusercontent.com/740210808/0bc159d2-f45b-4024-8233-f8806ca4283c)
+![ChronoSpin Logo](https://repository-images.githubusercontent.com/740210808/1e77045d-b87d-41e9-9b16-2c0da0443146)
 
 ## Description
 ChronoSpin is a 64-bit, true-random number generator algorithm.
