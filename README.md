@@ -26,8 +26,3 @@ This is the randomization function.
 The return value data type is `uint64_t`.
 
 It returns the 64-bit unsigned integer random number result.
-
-## Support
-ChronoSpin was designed and developed by [Wil Parsons](https://github.com/wilparsons).
-
-I'm available for freelance work to extend, implement or modify ChronoSpin and other algorithms.
