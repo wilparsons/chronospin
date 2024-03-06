@@ -12,17 +12,36 @@ Read [this article](https://medium.com/@wilparsons/chronospin-is-a-new-64-bit-tr
 #include "chronospin.h"
 
 int main(void) {
-  printf("%llu\n", chronospin());
-  printf("%llu\n", chronospin());
-  printf("%llu\n", chronospin());
+  uint32_t entropy[2];
+
+  if (chronospin(entropy) == true) {
+    printf("%u%u\n", entropy[0], entropy[1]);
+
+    if (chronospin(entropy) == true) {
+      printf("%u%u\n", entropy[0], entropy[1]);
+
+      if (chronospin(entropy) == true) {
+        printf("%u%u\n", entropy[0], entropy[1]);
+      } else {
+        printf("There was a system clock error.");
+      }
+    } else {
+      printf("There was a system clock error.");
+    }
+  } else {
+    printf("There was a system clock error.");
+  }
+
   return 0;
 }
 ```
 
 ## Reference
 #### `chronospin()`
-This is the randomization function.
+This is the randomization function that accepts the following argument.
 
-The return value data type is `uint64_t`.
+`entropy` is an array with 2 32-bit unsigned integers.
 
-It returns the 64-bit unsigned integer random number result.
+The return value data type is `bool`.
+
+It returns either `true` when a random number is generated or `false` when `clock_gettime()` fails.

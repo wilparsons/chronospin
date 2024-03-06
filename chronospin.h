@@ -1,8 +1,9 @@
 #ifndef CHRONOSPIN_H
 #define CHRONOSPIN_H
 
+#include <stdbool.h>
 #include <stdint.h>
 #include <time.h>
 
-uint64_t chronospin(void);
+bool chronospin(uint32_t *entropy);
 #endif
