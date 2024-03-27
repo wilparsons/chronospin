@@ -4,37 +4,10 @@
 ## Description
 ChronoSpin is a 64-bit, true-random number generator algorithm.
 
-Read [this article](https://medium.com/@wilparsons/chronospin-is-a-new-64-bit-trng-based-on-nanosecond-timing-without-arithmetic-operations-68637db4cc86) for an in-depth explanation.
+Read [this article](https://medium.com/@williamstaffordparsons/chronospin-is-a-new-64-bit-trng-based-on-nanosecond-timing-without-arithmetic-operations-68637db4cc86) for an in-depth explanation.
 
-## Usage
-``` c
-#include <stdio.h>
-#include "chronospin.h"
-
-int main(void) {
-  uint32_t entropy[2];
-
-  if (chronospin(entropy) == true) {
-    printf("%u%u\n", entropy[0], entropy[1]);
-
-    if (chronospin(entropy) == true) {
-      printf("%u%u\n", entropy[0], entropy[1]);
-
-      if (chronospin(entropy) == true) {
-        printf("%u%u\n", entropy[0], entropy[1]);
-      } else {
-        printf("There was a system clock error.");
-      }
-    } else {
-      printf("There was a system clock error.");
-    }
-  } else {
-    printf("There was a system clock error.");
-  }
-
-  return 0;
-}
-```
+## License
+ChronoSpin is subject to the software licensing terms from the [LICENSE file](https://github.com/williamstaffordparsons/chronospin/blob/master/LICENSE).
 
 ## Reference
 #### `chronospin()`
@@ -45,3 +18,14 @@ This is the randomization function that accepts the following argument.
 The return value data type is `bool`.
 
 It returns either `true` when a random number is generated or `false` when `clock_gettime()` fails.
+
+## Usage
+``` c
+#include "chronospin.h"
+
+int main(void) {
+  uint32_t entropy[2];
+  chronospin(entropy);
+  return 0;
+}
+```
